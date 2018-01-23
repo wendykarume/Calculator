@@ -78,7 +78,7 @@ public class Addition extends JFrame{
    
         contentPanel.add(five);contentPanel.add(six);contentPanel.add(seven);contentPanel.add(eight);
         contentPanel.add(nine);contentPanel.add(zero);contentPanel.add(add);contentPanel.add(subtract);
-        contentPanel.add(multiply);contentPanel.add(divide);contentPanel.add(equals);
+        contentPanel.add(multiply);contentPanel.add(divide);contentPanel.add(equals);contentPanel.add(clear);
         this.setContentPane(contentPanel);
         
     }
@@ -349,12 +349,15 @@ public class Addition extends JFrame{
                     case'-':
                         answer= d1 - d2;
                         break;
-                    case'/':
-                        answer= d1 / d2;
-                        break;
                     case'*':
-                        answer= d1 * d2;
-                        break;                        
+                        answer= d1 - d2;
+                        break;
+                    case'/':
+                        answer= d1 - d2;
+                        break;
+                    case'=':
+                        answer= d1 - d2;
+                        break;   
                 }
                 
                 sanswer = Double.toString(answer);
@@ -365,6 +368,7 @@ public class Addition extends JFrame{
         
              
         }
+        //initializing the button clear
         if(src.equals(clear)){
             std1 = null;
             std2 = null;
