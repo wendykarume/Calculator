@@ -6,7 +6,7 @@ import java.awt.event.*;
 public class Addition extends JFrame{
     private JTextField answerfield;
     private JButton one,two,three,four,five,six,seven,eight,nine,zero,add,subtract,multiply,divide,equals,clear;
-    private String stemp1, stemp2, sanswer;
+    private String std1, std2, sanswer;
     double answer;
     private JPanel contentPanel;
     private boolean equalsClicked;
@@ -58,7 +58,7 @@ public class Addition extends JFrame{
         equals.setSize(new Dimension(225,25));
         
         Numbers n = new Numbers ();
-        Calc c = new Calc ();
+        Calculator c = new Calculator ();
         
         one.addActionListener(n); two.addActionListener(n); three.addActionListener(n);
         four.addActionListener(n); five.addActionListener(n); six.addActionListener(n);
@@ -79,4 +79,291 @@ public class Addition extends JFrame{
         this.setContentPane(contentPanel);
         
     }
+            
+    private class Numbers implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent event){
+            JButton std = (JButton) event.getSource();    
+            
+            if(std.equals(one))
+            {
+                if(opchosen==false){
+                    if(std1==null){
+                        std1 = "1";
+                    }else{
+                        std1=std1 + "1";
+                    }
+                }else{
+                    if (std2==null){
+                        std2="1";
+                    }else{
+                        std2=std1 + "1";
+                        }
+                    }
+            }
+            if(std.equals(two))
+            {
+                if(opchosen==false){
+                    if(std1==null){
+                        std1 = "2";
+                    }else{
+                        std1=std1 + "2";
+                    }
+                }else{
+                    if (std2==null){
+                        std2="2";
+                    }else{
+                        std2=std1 + "2";
+                        }
+                    }
+            }
+            if(std.equals(three))
+            {
+                if(opchosen==false){
+                    if(std1==null){
+                        std1 = "3";
+                    }else{
+                        std1=std1 + "3";
+                    }
+                }else{
+                    if (std2==null){
+                        std2="3";
+                    }else{
+                        std2=std1 + "3";
+                        }
+                    }
+            }
+            if(std.equals(four))
+            {
+                if(opchosen==false){
+                    if(std1==null){
+                        std1 = "4";
+                    }else{
+                        std1=std1 + "4";
+                    }
+                }else{
+                    if (std2==null){
+                        std2="4";
+                    }else{
+                        std2=std1 + "4";
+                        }
+                    }
+            }
+            if(std.equals(five))
+            {
+                if(opchosen==false){
+                    if(std1==null){
+                        std1 = "5";
+                    }else{
+                        std1=std1 + "5";
+                    }
+                }else{
+                    if (std2==null){
+                        std2="5";
+                    }else{
+                        std2=std1 + "5";
+                        }
+                    }
+            }
+            if(std.equals(six))
+            {
+                if(opchosen==false){
+                    if(std1==null){
+                        std1 = "6";
+                    }else{
+                        std1=std1 + "6";
+                    }
+                }else{
+                    if (std2==null){
+                        std2="6";
+                    }else{
+                        std2=std1 + "6";
+                        }
+                    }
+            }
+            if(std.equals(seven))
+            {
+                if(opchosen==false){
+                    if(std1==null){
+                        std1 = "7";
+                    }else{
+                        std1=std1 + "7";
+                    }
+                }else{
+                    if (std2==null){
+                        std2="7";
+                    }else{
+                        std2=std1 + "7";
+                        }
+                    }
+            }
+            if(std.equals(eight))
+            {
+                if(opchosen==false){
+                    if(std1==null){
+                        std1 = "8";
+                    }else{
+                        std1=std1 + "8";
+                    }
+                }else{
+                    if (std2==null){
+                        std2="8";
+                    }else{
+                        std2=std1 + "8";
+                        }
+                    }
+            }
+            if(std.equals(nine))
+            {
+                if(opchosen==false){
+                    if(std1==null){
+                        std1 = "9";
+                    }else{
+                        std1=std1 + "9";
+                    }
+                }else{
+                    if (std2==null){
+                        std2="9";
+                    }else{
+                        std2=std1 + "9";
+                        }
+                    }
+            }
+            if(std.equals(zero))
+            {
+                if(opchosen==false){
+                    if(std1==null){
+                        std1 = "0";
+                    }else{
+                        std1=std1 + "0";
+                    }
+                }else{
+                    if (std2==null){
+                        std2="0";
+                     }else{
+                        std2=std1 + "0";
+                        }
+                    }
+            }
+        
 
+            if(opchosen==false){
+                answerfield.setText(std1);
+            }else{
+                answerfield.setText(std2);
+            }
+            if(equalsClicked==false){
+                if(opchosen==false){
+                    answerfield.setText(std1);
+                }else{
+                    answerfield.setText(std2);
+                }
+                }
+        }
+    }  
+
+    class Calc implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent event)
+        {
+            JButton std;
+            std = (JButton) event.getSource();
+            
+            if(std.equals(add)){
+                if(std1==null){
+                    System.out.println("Choose your numbers first!");
+                }else
+                    if(std1!= null && std2!= null){
+                        opchosen = true;
+                        operation = '+';
+                    }else
+                     if(std1!= null && std2!= null){
+                        System.out.println("Two operations only!");
+                }
+
+            }
+            if(std.equals(subtract)){
+                if(std1==null){
+                    System.out.println("Choose your numbers first!");
+                }else
+                    if(std1!= null && std2!= null){
+                        opchosen = true;
+                        operation = '-';
+                    }else
+                     if(std1!= null && std2!= null){
+                        System.out.println("Two operations only!");
+                }
+
+            }
+            if(std.equals(multiply)){
+                if(std1==null){
+                    System.out.println("Choose your numbers first!");
+                }else
+                    if(std1!= null && std2!= null){
+                        opchosen = true;
+                        operation = '*';
+                    }else
+                     if(std1!= null && std2!= null){
+                        System.out.println("Two operations only!");
+                }
+
+            }
+            if(std.equals(divide)){
+                if(std1==null){
+                    System.out.println("Choose your numbers first!");
+                }else
+                    if(std1!= null && std2!= null){
+                        opchosen = true;
+                        operation = '/';
+                    }else
+                     if(std1!= null && std2!= null){
+                        System.out.println("Two operations only!");
+                }
+
+            }
+            if(std.equals(equals)){
+                if(std1==null){
+                    System.out.println("Choose your numbers first!");
+                }else
+                    if(std1!= null && std2!= null){
+                    System.out.println("Choose BOTH numbers first");
+                    }else
+                     if(std1!= null && std2!= null){
+                        System.out.println("Two operations only!");
+                }
+
+            }
+            
+            if(std1 != null && std2 != null){
+                double d1=0.0, d2=0.0;
+                d1 = Double.parseDouble(std1);
+                d2 = Double.parseDouble(std2);
+                switch(operation){
+                    case'+':
+                        answer= d1 + d2;
+                        break;
+                    case'-':
+                        answer= d1 - d2;
+                        break;
+                    case'/':
+                        answer= d1 / d2;
+                        break;
+                    case'*':
+                        answer= d1 * d2;
+                        break;                        
+                }
+                
+                sanswer = Double.toString(answer);
+                answerfield.setText(sanswer);
+                if(operation == '/' && d2 ==0.0){
+                    answerfield.setText("DIVIDE BY 0 ERROR");
+                }
+                
+        }
+               
+                    
+        }
+    
+    }
+}
