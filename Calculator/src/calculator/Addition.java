@@ -38,25 +38,24 @@ public class Addition extends JFrame{
         divide=new JButton("/");
         equals=new JButton("=");
         clear=new JButton("c");
-        
         Dimension dim = new Dimension(75,25);
         
-        one.setSize(dim);
-        two.setSize(dim);
-        three.setSize(dim);
-        four.setSize(dim);
-        five.setSize(dim);
-        six.setSize(dim);
-        seven.setSize(dim);
-        eight.setSize(dim);
-        nine.setSize(dim);
-        zero.setSize(new Dimension(225,25));
-        add.setSize(new Dimension(113,25));
-        subtract.setSize(new Dimension(113,25));
-        multiply.setSize(new Dimension(113,25));
-        divide.setSize(new Dimension(113,25));
-        equals.setSize(new Dimension(225,25));
-        
+        one.setPreferredSize(dim);
+        two.setPreferredSize(dim);
+        three.setPreferredSize(dim);
+        four.setPreferredSize(dim);
+        five.setPreferredSize(dim);
+        six.setPreferredSize(dim);
+        seven.setPreferredSize(dim);
+        eight.setPreferredSize(dim);
+        nine.setPreferredSize(dim);
+        zero.setPreferredSize(new Dimension(225,25));
+        add.setPreferredSize(new Dimension(113,25));
+        subtract.setPreferredSize(new Dimension(113,25));
+        multiply.setPreferredSize(new Dimension(113,25));
+        divide.setPreferredSize(new Dimension(113,25));
+        equals.setPreferredSize(new Dimension(225,25));
+        clear.setPreferredSize(new Dimension(225,25));
         Numbers n = new Numbers ();
         Calc c = new Calc ();
         
@@ -66,7 +65,7 @@ public class Addition extends JFrame{
         zero.addActionListener(n);
         
         add.addActionListener(c); subtract.addActionListener(c); multiply.addActionListener(c);
-        divide.addActionListener(c); equals.addActionListener(n);clear.addActionListener(c);
+        divide.addActionListener(c); equals.addActionListener(c);clear.addActionListener(c);
         
     //initializing the layout    
        
@@ -79,7 +78,7 @@ public class Addition extends JFrame{
    
         contentPanel.add(five);contentPanel.add(six);contentPanel.add(seven);contentPanel.add(eight);
         contentPanel.add(nine);contentPanel.add(zero);contentPanel.add(add);contentPanel.add(subtract);
-        contentPanel.add(multiply);contentPanel.add(divide);contentPanel.add(equals);contentPanel.add(clear);
+        contentPanel.add(multiply);contentPanel.add(divide);contentPanel.add(equals);
         this.setContentPane(contentPanel);
         
     }
@@ -363,7 +362,8 @@ public class Addition extends JFrame{
                 if(operation == '/' && d2 ==0.0){
                     answerfield.setText("DIVIDE BY 0 ERROR");
                 }
-                
+        
+             
         }
         if(src.equals(clear)){
             std1 = null;
@@ -372,11 +372,11 @@ public class Addition extends JFrame{
             opchosen = false;
             operation = ' ';
             answerfield.setText(null);
-            sanswer = null;
+        }
         }
         }
                
                     
         }
     
-    }
+    
