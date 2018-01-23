@@ -58,7 +58,7 @@ public class Addition extends JFrame{
         equals.setSize(new Dimension(225,25));
         
         Numbers n = new Numbers ();
-        Calculator c = new Calculator ();
+        Calc c = new Calc ();
         
         one.addActionListener(n); two.addActionListener(n); three.addActionListener(n);
         four.addActionListener(n); five.addActionListener(n); six.addActionListener(n);
@@ -66,7 +66,7 @@ public class Addition extends JFrame{
         zero.addActionListener(n);
         
         add.addActionListener(c); subtract.addActionListener(c); multiply.addActionListener(c);
-        divide.addActionListener(c); equals.addActionListener(n);
+        divide.addActionListener(c); equals.addActionListener(n);clear.addActionListener(c);
         
     //initializing the layout    
        
@@ -75,7 +75,11 @@ public class Addition extends JFrame{
         contentPanel.setLayout(new FlowLayout());
         contentPanel.add(answerfield,BorderLayout.NORTH);
         
-        contentPanel.add(one);contentPanel.add(two);contentPanel.add(three);contentPanel.add(four);contentPanel.add(five);contentPanel.add(six);contentPanel.add(seven);contentPanel.add(eight);contentPanel.add(nine);contentPanel.add(zero);contentPanel.add(add);contentPanel.add(subtract);contentPanel.add(multiply);contentPanel.add(divide);contentPanel.add(equals);
+        contentPanel.add(one);contentPanel.add(two);contentPanel.add(three);contentPanel.add(four);
+   
+        contentPanel.add(five);contentPanel.add(six);contentPanel.add(seven);contentPanel.add(eight);
+        contentPanel.add(nine);contentPanel.add(zero);contentPanel.add(add);contentPanel.add(subtract);
+        contentPanel.add(multiply);contentPanel.add(divide);contentPanel.add(equals);contentPanel.add(clear);
         this.setContentPane(contentPanel);
         
     }
@@ -267,10 +271,10 @@ public class Addition extends JFrame{
         @Override
         public void actionPerformed(ActionEvent event)
         {
-            JButton std;
-            std = (JButton) event.getSource();
+            JButton src;
+            src = (JButton) event.getSource();
             
-            if(std.equals(add)){
+            if(src.equals(add)){
                 if(std1==null){
                     System.out.println("Choose your numbers first!");
                 }else
@@ -283,7 +287,7 @@ public class Addition extends JFrame{
                 }
 
             }
-            if(std.equals(subtract)){
+            if(src.equals(subtract)){
                 if(std1==null){
                     System.out.println("Choose your numbers first!");
                 }else
@@ -296,7 +300,7 @@ public class Addition extends JFrame{
                 }
 
             }
-            if(std.equals(multiply)){
+            if(src.equals(multiply)){
                 if(std1==null){
                     System.out.println("Choose your numbers first!");
                 }else
@@ -309,7 +313,7 @@ public class Addition extends JFrame{
                 }
 
             }
-            if(std.equals(divide)){
+            if(src.equals(divide)){
                 if(std1==null){
                     System.out.println("Choose your numbers first!");
                 }else
@@ -322,7 +326,7 @@ public class Addition extends JFrame{
                 }
 
             }
-            if(std.equals(equals)){
+            if(src.equals(equals)){
                 if(std1==null){
                     System.out.println("Choose your numbers first!");
                 }else
@@ -361,9 +365,18 @@ public class Addition extends JFrame{
                 }
                 
         }
+        if(src.equals(clear)){
+            std1 = null;
+            std2 = null;
+            equalsClicked = false;
+            opchosen = false;
+            operation = ' ';
+            answerfield.setText(null);
+            sanswer = null;
+        }
+        }
                
                     
         }
     
     }
-}
